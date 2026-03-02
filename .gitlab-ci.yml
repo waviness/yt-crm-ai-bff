@@ -1,0 +1,76 @@
+# ============================================================
+# GitLab CI/CD 配置 - yt-crm-uniapp
+#
+# 分支策略：
+#   dev     → 仅单元测试（集成验证）
+#   test    → 单元测试 + 构建（测试验证）
+#   release → 单元测试 + 构建（发布关卡）
+#   master  → 不触发 CI（生产快照，手动打 tag）
+#
+# 说明：
+#   类型检查和 Lint 检查由本地 pre-commit hook（lint-staged）保障，
+#   CI 不再重复执行，避免 allow_failure 产生无意义的警告。
+# ============================================================
+
+# 触发规则：
+# - MR 事件 → 触发（功能分支提 MR 时跑 CI）
+# - 直接 push 到 test / release → 触发
+# - dev 仅通过 MR 触发（合并后不再重复跑）
+# - 其他分支 push（功能分支、master 等） → 不触发
+workflow:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_COMMIT_BRANCH == "test" || $CI_COMMIT_BRANCH == "release"'
+
+image: node:22-alpine
+
+# 缓存 pnpm store + node_modules，所有分支共享（lockfile 不变则命中缓存）
+cache:
+  key:
+    files:
+      - pnpm-lock.yaml
+  paths:
+    - .pnpm-store/
+    - node_modules/
+
+stages:
+  - test
+  - build
+
+# 公共安装脚本（YAML 锚点复用）
+.pnpm-setup: &pnpm-setup
+  before_script:
+    - corepack enable
+    - corepack prepare pnpm@10.10.0 --activate
+    - pnpm config set store-dir .pnpm-store
+    - pnpm config set registry https://registry.npmmirror.com/
+    - pnpm install --frozen-lockfile
+
+# ==================== 单元测试 ====================
+# dev / test / release 都跑
+unit_test:
+  stage: test
+  tags:
+    - crm
+  <<: *pnpm-setup
+  script:
+    - npx vitest run
+
+# ==================== 构建 H5 ====================
+# test + release 分支构建
+build_h5:
+  stage: build
+  tags:
+    - crm
+  <<: *pnpm-setup
+  script:
+    - pnpm run build:h5
+  artifacts:
+    paths:
+      - dist/build/h5/
+    expire_in: 3 days
+  needs: [unit_test]
+  rules:
+    # 只在合并后的分支 pipeline 中构建（MR 阶段不构建，避免重复）
+    - if: '$CI_COMMIT_BRANCH == "test"'
+    - if: '$CI_COMMIT_BRANCH == "release"'

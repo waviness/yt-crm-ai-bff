@@ -1,0 +1,61 @@
+{
+  "files.eol": "\n",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "never",
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "stylelint.validate": ["css", "scss", "vue"],
+  // Prettier 配置
+  "prettier.prettierPath": "node_modules/prettier",
+  "prettier.configPath": "prettier.config.mjs",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  // 禁用与 Prettier 冲突的格式化工具
+  "javascript.format.enable": false,
+  "typescript.format.enable": false,
+  "json.format.enable": false,
+  // 仅对当前项目生效的文件嵌套规则
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "eslint.config.mjs": "prettier.config.mjs, .prettierignore, stylelint.config.mjs, .stylelintignore",
+    "package.json": "package-lock.json,pnpm-lock.yaml,yarn.lock,.npmrc,.pnpmfile.cjs"
+  },
+  // 配置路径别名映射（与tsconfig保持一致）
+  "path-intellisense.mappings": {
+    "@": "${workspaceRoot}/src"
+  },
+  // 告诉VS Code SCSS文件的查找路径
+  "scss.lint.unknownAtRules": "ignore",
+  "files.associations": {
+    "*.scss": "scss"
+  },
+  // 启用对import语句的智能提示
+  "javascript.suggest.paths": true,
+  // TypeScript路径映射支持，改善VS Code中的路径跳转
+  "typescript.preferences.includePackageJsonAutoImports": "on",
+  "typescript.suggest.autoImports": true,
+  "typescript.suggest.paths": true,
+  // 语言特定的格式化设置
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  }
+}

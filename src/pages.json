@@ -1,0 +1,830 @@
+{
+  "globalStyle": {
+    "backgroundColor": "#f5f6f9",
+    /* #ifdef MP-WEIXIN */
+    "navigationStyle": "default",
+    /* #endif */
+
+    // H5：隐藏原生导航栏（使用 custom 模式）
+    /* #ifdef H5 */
+    "navigationStyle": "custom",
+    /* #endif */
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#ffffff"
+  },
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^u--(.*)": "uview-plus/components/u-$1/u-$1.vue",
+      "^up-(.*)": "uview-plus/components/u-$1/u-$1.vue",
+      "^u-([^-].*)": "uview-plus/components/u-$1/u-$1.vue",
+      "^app-(.*)": "@/components/base/$1.vue",
+      "^biz-(.*)": "@/components/biz/$1.vue",
+       "^uv-(.*)": "@/uni_modules/uv-$1/components/uv-$1/uv-$1.vue"
+    }
+  },
+  "pages": [
+    {
+      "path": "pages/auth/admin-login",
+      "style": {
+        "navigationBarTitleText": "登录"
+      }
+    },
+    {
+      "path": "pages/auth/login",
+      "style": {
+        "navigationBarTitleText": "登录"
+      }
+    },
+    {
+      "path": "pages/download/index",
+      "style": {
+        "navigationBarTitleText": "文件下载"
+      }
+    }
+  ],
+  "subPackages": [
+    {
+      "root": "subpackages/tabbars",
+      "name": "tabbars",
+      "pages": [
+        {
+          "path": "home",
+          "style": {
+            "navigationBarTitleText": "业务中心"
+          }
+        },
+        {
+          "path": "user",
+          "style": {
+            "navigationBarTitleText": "我的"
+          }
+        },
+        {
+          "path": "dashboard",
+          "style": {
+            "navigationBarTitleText": "数据中心"
+          }
+        }
+      ]
+    },
+    {
+      "root": "subpackages/home",
+      "name": "home-modules",
+      "pages": [
+        {
+          "path": "search",
+          "style": { "navigationBarTitleText": "搜索" }
+        },
+        {
+          "path": "message",
+          "style": { "navigationBarTitleText": "消息中心" }
+        },
+        {
+          "path": "map",
+          "style": { "navigationBarTitleText": "客户地图" }
+        },
+        {
+          "path": "map-list",
+          "style": { "navigationBarTitleText": "客户地图-列表" }
+        },
+        {
+          "path": "map-detail",
+          "style": { "navigationBarTitleText": "客户地图-详情" }
+        }
+      ]
+    },
+    {
+      "root": "subpackages/daily",
+      "name": "home-daily",
+      "pages": [
+        {
+          "path": "task/send",
+          "style": { "navigationBarTitleText": "通用任务" }
+        },
+        {
+          "path": "task/publish",
+          "style": { "navigationBarTitleText": "通用任务-发布" }
+        },
+        {
+          "path": "task/detail",
+          "style": { "navigationBarTitleText": "通用任务-详情" }
+        },
+        {
+          "path": "task/supervision",
+          "style": { "navigationBarTitleText": "任务督办" }
+        },
+        {
+          "path": "task/message",
+          "style": { "navigationBarTitleText": "通用任务-详情" }
+        },
+        {
+          "path": "weekly/index",
+          "style": { "navigationBarTitleText": "周报" }
+        },
+        {
+          "path": "weekly/add",
+          "style": { "navigationBarTitleText": "周报-新增" }
+        },
+        {
+          "path": "topic/index",
+          "style": { "navigationBarTitleText": "话题广场" }
+        },
+        {
+          "path": "topic/add",
+          "style": { "navigationBarTitleText": "新增话题" }
+        },
+        {
+          "path": "topic/list",
+          "style": { "navigationBarTitleText": "话题列表" }
+        },
+        {
+          "path": "topic/detail",
+          "style": { "navigationBarTitleText": "话题详情" }
+        },
+        {
+          "path": "inventory-query/index",
+          "style": { "navigationBarTitleText": "库存查询" }
+        },
+        {
+          "path": "inventory-query/list",
+          "style": { "navigationBarTitleText": "库存列表" }
+        },
+        {
+          "path": "inventory-query/detail",
+          "style": { "navigationBarTitleText": "库存查询详情" }
+        },
+        {
+          "path": "birthday-reminder/index",
+          "style": { "navigationBarTitleText": "生日提醒" }
+        },
+        {
+          "path": "birthday-reminder/detail",
+          "style": { "navigationBarTitleText": "生日提醒详情" }
+        },
+        {
+          "path": "birthday-reminder/person-detail",
+          "style": { "navigationBarTitleText": "推送详情" }
+        },
+        {
+          "path": "variety-follow/index",
+          "style": { "navigationBarTitleText": "集采勾标" }
+        },
+        {
+          "path": "variety-follow/detail",
+          "style": { "navigationBarTitleText": "集采勾标" }
+        },
+        {
+          "path": "variety-follow/op-detail",
+          "style": { "navigationBarTitleText": "集采勾标" }
+        },
+        {
+          "path": "schedule/index",
+          "style": { "navigationBarTitleText": "日程安排" }
+        },
+        {
+          "path": "wx-lock/index",
+          "style": { "navigationBarTitleText": "微信锁控" }
+        },
+        {
+          "path": "wx-lock/detail",
+          "style": { "navigationBarTitleText": "微信锁控详情" }
+        },
+        {
+          "path": "wx-lock/handle-detail",
+          "style": { "navigationBarTitleText": "处理意见" }
+        },
+        {
+          "path": "two-vote-reminder/index",
+          "style": {
+            "navigationBarTitleText": "两票制消息推送"
+          }
+        }
+      ]
+    },
+    {
+      "root": "subpackages/compliance",
+      "name": "home-compliance",
+      "pages": [
+        {
+          "path": "license/index",
+          "style": {
+            "navigationBarTitleText": "证照助手",
+            "onReachBottomDistance": 50
+          }
+        },
+        {
+          "path": "license/detail",
+          "style": { "navigationBarTitleText": "证照详情" }
+        },
+        {
+          "path": "license/approve",
+          "style": { "navigationBarTitleText": "证照延期" }
+        },
+        {
+          "path": "license/message",
+          "style": { "navigationBarTitleText": "证照详情" }
+        },
+        {
+          "path": "subscribe-reminder/index",
+          "style": { "navigationBarTitleText": "订阅提醒" }
+        },
+        {
+          "path": "quality-review/index",
+          "style": {
+            "navigationBarTitleText": "质量复查"
+          }
+        },
+        {
+          "path": "quality-review/detail",
+          "style": { "navigationBarTitleText": "质量复查详情" }
+        },
+        {
+          "path": "quality-recall/index",
+          "style": {
+            "navigationBarTitleText": "质量召回"
+          }
+        },
+        {
+          "path": "quality-recall/detail",
+          "style": { "navigationBarTitleText": "质量召回详情" }
+        }
+      ]
+    },
+    {
+      "root": "subpackages/business",
+      "name": "home-business",
+      "pages": [
+        {
+          "path": "key-projects/index",
+          "style": {
+            "navigationBarTitleText": "重点/项目",
+            "mp-weixin": {
+              "usingComponents": {
+                "qiun-data-charts": "/subpackages/dashboard/uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts"
+              },
+              "componentPlaceholder": {
+                "qiun-data-charts": "view"
+              }
+            }
+          }
+        },
+        {
+          "path": "key-projects/follow",
+          "style": { "navigationBarTitleText": "工作跟进" }
+        },
+        {
+          "path": "key-projects/topic",
+          "style": { "navigationBarTitleText": "最新话题" }
+        },
+        {
+          "path": "key-projects/add-goods",
+          "style": { "navigationBarTitleText": "目标品种新增" }
+        },
+        {
+          "path": "key-projects/add-gr",
+          "style": { "navigationBarTitleText": "网格层级新增" }
+        },
+        {
+          "path": "key-projects/add-target",
+          "style": { "navigationBarTitleText": "目标次数新增" }
+        },
+        {
+          "path": "funding/index",
+          "style": { "navigationBarTitleText": "回款填报" }
+        },
+        {
+          "path": "funding/detail",
+          "style": { "navigationBarTitleText": "回款填报详情" }
+        },
+        {
+          "path": "funding/report",
+          "style": { "navigationBarTitleText": "收付款报表" }
+        },
+        {
+          "path": "funding/report-detail",
+          "style": { "navigationBarTitleText": "收付款报表详情" }
+        },
+        {
+          "path": "receivable/index",
+          "style": { "navigationBarTitleText": "应收管理" }
+        },
+        {
+          "path": "receivable/detail",
+          "style": { "navigationBarTitleText": "应收管理详情" }
+        },
+        {
+          "path": "confirmation-letter/index",
+          "style": { "navigationBarTitleText": "询证函助手" }
+        },
+        {
+          "path": "confirmation-letter/overdue",
+          "style": { "navigationBarTitleText": "询证函超期未处理" }
+
+        },
+        {
+          "path": "confirmation-letter/detail",
+          "style": { "navigationBarTitleText": "询证函助手详情" }
+        },
+        {
+          "path": "confirmation-letter/abnormal",
+          "style": { "navigationBarTitleText": "询证函异常" }
+        },
+        {
+          "path": "confirmation-letter/abnormal-detail",
+          "style": { "navigationBarTitleText": "询证函异常详情" }
+        },
+        {
+          "path": "confirmation-letter/add",
+          "style": { "navigationBarTitleText": "询证函客户添加" }
+        },
+        {
+          "path": "final-knot/index",
+          "style": { "navigationBarTitleText": "末次结款" }
+        },
+        {
+          "path": "final-knot/detail",
+          "style": { "navigationBarTitleText": "末次结款详情" }
+        },
+        {
+          "path": "collection-claim/index",
+          "style": { "navigationBarTitleText": "收款认领" }
+        },
+        {
+          "path": "collection-claim/detail",
+          "style": { "navigationBarTitleText": "收款认领详情" }
+        },
+        {
+          "path": "contract-find/index",
+          "style": { "navigationBarTitleText": "合同查询" }
+        },
+        {
+          "path": "contract-find/detail",
+          "style": { "navigationBarTitleText": "合同详情" }
+        },
+        {
+          "path": "high-value/info/index",
+          "style": { "navigationBarTitleText": "高值信息" }
+        },
+        {
+          "path": "high-value/goods/index",
+          "style": { "navigationBarTitleText": "高值货品" }
+        },
+        {
+          "path": "high-value/detail",
+          "style": { "navigationBarTitleText": "高值详情" }
+        },
+        {
+          "path": "sales-return-order/index",
+          "style": { "navigationBarTitleText": "销退点单" }
+        },
+        {
+          "path": "sales-return-order/detail",
+          "style": { "navigationBarTitleText": "销退点单详情" }
+        },
+        {
+          "path": "wms-two-pin-dic/index",
+          "style": { "navigationBarTitleText": "物流二销字典" }
+        },
+        {
+          "path": "wms-two-pin-dic/detail",
+          "style": { "navigationBarTitleText": "物流二销详情" }
+        },
+        {
+          "path": "refund-approve/index",
+          "style": { "navigationBarTitleText": "多仓销退" }
+        },
+        {
+          "path": "refund-approve/detail",
+          "style": { "navigationBarTitleText": "多仓销退详情" }
+        }
+      ]
+    },
+    {
+      "root": "subpackages/order",
+      "name": "order-first-aid",
+      "pages": [
+        {
+          "path": "first-aid/index",
+          "style": { "navigationBarTitleText": "急救补单" }
+        },
+        {
+          "path": "first-aid/detail",
+          "style": { "navigationBarTitleText": "急救补单详情" }
+        },
+        {
+          "path": "order-manage/index",
+          "style": { "navigationBarTitleText": "订单管理" }
+        },
+        {
+          "path": "order-manage/list",
+          "style": { "navigationBarTitleText": "订单管理-列表" }
+        },
+        {
+          "path": "order-manage/detail",
+          "style": { "navigationBarTitleText": "订单管理-详情" }
+        },
+        {
+          "path": "impulse-difference-manage/index",
+          "style": { "navigationBarTitleText": "冲差管理" }
+        },
+        {
+          "path": "impulse-difference-manage/detail",
+          "style": { "navigationBarTitleText": "冲差管理-详情" }
+        },
+        {
+          "path": "customer-order-approve/index",
+          "style": { "navigationBarTitleText": "客户下单审核" }
+        },
+        {
+          "path": "customer-order-approve/detail",
+          "style": { "navigationBarTitleText": "客户下单审核-详情" }
+        }
+      ]
+    },
+    {
+      "root": "subpackages/project",
+      "name": "home-project",
+      "pages": [
+        {
+          "path": "entry",
+          "style": { "navigationBarTitleText": "项目管理" }
+        },
+
+        {
+          "path": "index",
+          "style": { "navigationBarTitleText": "项目管理" }
+        },
+        {
+          "path": "goods",
+          "style": { "navigationBarTitleText": "项目管理-准入" }
+        },
+        {
+          "path": "rank",
+          "style": { "navigationBarTitleText": "项目管理-准入-排名" }
+        },
+        {
+          "path": "detail",
+          "style": { "navigationBarTitleText": "项目管理-准入-详情" }
+        },
+        {
+          "path": "status-detail",
+          "style": { "navigationBarTitleText": "项目管理-状态详情" }
+        },
+        {
+          "path": "medic-board-list",
+          "style": { "navigationBarTitleText": "项目管理-药事会列表" }
+        },
+        {
+          "path": "medic-board-detail",
+          "style": { "navigationBarTitleText": "项目管理-药事会详情" }
+        },
+        {
+          "path": "exindex",
+          "style": { "navigationBarTitleText": "项目管理" }
+        },
+        {
+          "path": "exgoods",
+          "style": { "navigationBarTitleText": "项目管理-深分" }
+        },
+        {
+          "path": "exrank",
+          "style": { "navigationBarTitleText": "项目管理-深分-排名" }
+        },
+        {
+          "path": "policy",
+          "style": { "navigationBarTitleText": "项目管理-政策" }
+        }
+      ]
+    },
+    {
+      "root": "subpackages/dashboard",
+      "name": "dashboard-sales",
+      "pages": [
+        {
+          "path": "sales-line-rise",
+          "style": { "navigationBarTitleText": "数据中心" } // 销售线索-最高领导权限 0
+        },
+        {
+          "path": "sales-line-rise-detail",
+          "style": { "navigationBarTitleText": "数据中心" } // 销售线索-销售员权限 5 客户/品种详情 6
+        },
+        {
+          "path": "purchase-line-rise",
+          "style": { "navigationBarTitleText": "采购管理" } // 采购管理页面
+        },
+        {
+          "path": "ka-purveyor-list",
+          "style": { "navigationBarTitleText": "KA供应商列表" } // KA供应商列表页面
+        },
+        {
+          "path": "sales-line-key-page",
+          "style": { "navigationBarTitleText": "数据中心" } // 重点客户/品种
+        },
+        {
+          "path": "overdue-receivable-index",
+          "style": { "navigationBarTitleText": "数据中心" } // 逾期长账龄应收相关界面
+        },
+        {
+          "path": "brand-collection-page",
+          "style": { "navigationBarTitleText": "品牌集合" } // 品牌集合界面
+        },
+        {
+          "path": "brand-collection-page-detail",
+          "style": { "navigationBarTitleText": "品牌集合" } // 品牌集合界面 -- 详情
+        },
+        {
+          "path": "brand-collection-page-custom-detail",
+          "style": { "navigationBarTitleText": "品牌集合" } // 品牌集合界面 -- 详情
+        },
+        {
+          "path": "customer-trend-page",
+          "style": { "navigationBarTitleText": "客户趋势" } // 客户趋势界面
+        },
+        {
+          "path": "customer-trend-page-detail",
+          "style": { "navigationBarTitleText": "客户趋势" } // 客户趋势界面
+        },
+        {
+          "path": "visit-page-total",
+          "style": { "navigationBarTitleText": "数据中心" } // 近30天拜访点击进入后 total界面
+        },
+        {
+          "path": "visit-page-list",
+          "style": { "navigationBarTitleText": "数据中心" } // 近30天拜访点击进入后 list界面
+        },
+        {
+          "path": "visit-page-list-detail",
+          "style": { "navigationBarTitleText": "数据中心" } // 近30天拜访点击进入后 detail界面
+        },
+        {
+          "path": "innovation-page",
+          "style": { "navigationBarTitleText": "创新品种" } // 创新品种界面
+        },
+        {
+          "path": "innovation-page-detail",
+          "style": { "navigationBarTitleText": "创新品种详情" }
+        },
+        {
+          "path": "jicai-page",
+          "style": { "navigationBarTitleText": "集采" }
+        },
+        {
+          "path": "jicai-page-detail",
+          "style": { "navigationBarTitleText": "集采详情" }
+        },
+        {
+          "path": "all-balance-gross",
+          "style": { "navigationBarTitleText": "全单位平衡毛利" }
+        },
+        {
+          "path": "balance-gross-index",
+          "style": { "navigationBarTitleText": "平衡毛利" }
+        },
+        {
+          "path": "balance-gross-detail",
+          "style": { "navigationBarTitleText": "平衡毛利详情" }
+        },
+        {
+          "path": "sales-line-overdue",
+          "style": { "navigationBarTitleText": "区域公司逾期账龄详情" }
+        },
+        {
+          "path": "sales-line-overdue-detail",
+          "style": { "navigationBarTitleText": "逾期长账龄详情" }
+        }
+      ]
+    },
+    {
+      "root": "subpackages/vbp",
+      "name": "home-vbp",
+      "pages": [
+        {
+          "path": "policy/index",
+          "style": { "navigationBarTitleText": "医院政策填报" }
+        },
+        {
+          "path": "policy/detail",
+          "style": { "navigationBarTitleText": "医院政策填报-政策详情" }
+        },
+        {
+          "path": "project/index",
+          "style": { "navigationBarTitleText": "供应商VBP项目管理" }
+        },
+        {
+          "path": "project/customer",
+          "style": { "navigationBarTitleText": "供应商VBP项目管理" }
+        },
+        {
+          "path": "project/list",
+          "style": { "navigationBarTitleText": "供应商VBP项目管理" }
+        },
+        {
+          "path": "project/fill",
+          "style": { "navigationBarTitleText": "供应商VBP项目管理-填报" }
+        },
+        {
+          "path": "project/detail",
+          "style": { "navigationBarTitleText": "供应商VBP项目管理-详情" }
+        }
+      ]
+    },
+    {
+      "root": "subpackages/customer",
+      "name": "home-customer",
+      "pages": [
+        {
+          "path": "unit/index",
+          "style": { "navigationBarTitleText": "客户人员" }
+        },
+        {
+          "path": "unit/detail",
+          "style": { "navigationBarTitleText": "客户人员-详情" }
+        },
+        {
+          "path": "unit/person",
+          "style": { "navigationBarTitleText": "客户人员-人员" }
+        },
+        {
+          "path": "unit/person-add",
+          "style": { "navigationBarTitleText": "客户人员-人员" }
+        },
+        {
+          "path": "unit/share",
+          "style": { "navigationBarTitleText": "客户人员-分享" }
+        },
+        {
+          "path": "unit/share-add",
+          "style": { "navigationBarTitleText": "客户人员-分享" }
+        },
+        {
+          "path": "unit/transfer",
+          "style": { "navigationBarTitleText": "客户人员-转职" }
+        },
+        {
+          "path": "follow/index",
+          "style": { "navigationBarTitleText": "客情" }
+        },
+        {
+          "path": "follow/detail",
+          "style": { "navigationBarTitleText": "客情-详情" }
+        },
+        {
+          "path": "follow/add",
+          "style": { "navigationBarTitleText": "客情-新增" }
+        },
+        {
+          "path": "follow/intell-visit-detail",
+          "style": { "navigationBarTitleText": "智能拜访详情" }
+        },
+        {
+          "path": "follow/visit-container",
+          "style": { "navigationBarTitleText": "拜访记录" }
+        },
+        {
+          "path": "analysis/index",
+          "style": { "navigationBarTitleText": "客情分析" }
+        },
+        {
+          "path": "analysis/list",
+          "style": { "navigationBarTitleText": "客情分析列表" }
+        },
+        {
+          "path": "analysis/person",
+          "style": { "navigationBarTitleText": "客情分析人员" }
+        },
+        {
+          "path": "analysis-report/index",
+          "style": { "navigationBarTitleText": "客情分析推送报告" }
+        }
+      ]
+    },
+
+    {
+      "root": "subpackages/lock", // 锁控相关模块
+      "name": "home-lock",
+      "pages": [
+        {
+          "path": "index",
+          "style": { "navigationBarTitleText": "锁控" }
+        },
+        {
+          "path": "detail",
+          "style": { "navigationBarTitleText": "锁控详情" }
+        }
+      ]
+    },
+    {
+      "root": "subpackages/user",
+      "name": "user",
+      "pages": [
+        {
+          "path": "questionnaire",
+          "style": { "navigationBarTitleText": "问卷调查" }
+        },
+        {
+          "path": "quest-detail",
+          "style": { "navigationBarTitleText": "问卷调查-详情" }
+        },
+        {
+          "path": "log",
+          "style": { "navigationBarTitleText": "日志" }
+        }
+      ]
+    },
+    {
+      "root": "subpackages/report-two",
+      "name": "home-report-two",
+      "pages": [
+        {
+          "path": "two-pin/index",
+          "style": { "navigationBarTitleText": "二销目录" }
+        },
+        {
+          "path": "two-pin/custom-detail",
+          "style": { "navigationBarTitleText": "二销目录" }
+        },
+        {
+          "path": "two-pin/goods-detail",
+          "style": { "navigationBarTitleText": "二销目录货品详情" }
+        },
+        {
+          "path": "report/index",
+          "style": { "navigationBarTitleText": "报货单" }
+        },
+        {
+          "path": "report/custom-detail",
+          "style": { "navigationBarTitleText": "报货单" }
+        },
+        {
+          "path": "report/goods-detail",
+          "style": { "navigationBarTitleText": "报货单货品详情" }
+        },
+         {
+          "path": "shop-cart/index",
+          "style": { "navigationBarTitleText": "购物车" }
+        },
+        {
+          "path": "wx-order/index",
+          "style": { "navigationBarTitleText": "微信订单" }
+        },
+        {
+          "path": "wx-order/detail",
+          "style": { "navigationBarTitleText": "微信订单详情" }
+        }
+      ]
+    },
+    {
+      "root": "subpackages/medical-trade",
+      "name": "home-medical-trade",
+      "pages": [
+        {
+          "path": "project-search/index",
+          "style": { "navigationBarTitleText": "项目查询" }
+        },
+        {
+          "path": "project-search/detail",
+          "style": { "navigationBarTitleText": "项目详情" }
+        },
+        {
+          "path": "customer-person/index",
+          "style": { "navigationBarTitleText": "客户人员" }
+        },
+        {
+          "path": "customer-person/detail",
+          "style": { "navigationBarTitleText": "客户人员详情" }
+        },
+        {
+          "path": "visit-record/index",
+          "style": { "navigationBarTitleText": "拜访记录" }
+        },
+        {
+          "path": "customer-follow/index",
+          "style": { "navigationBarTitleText": "客情拜访" }
+        },
+        {
+          "path": "customer-follow/detail",
+          "style": { "navigationBarTitleText": "客情拜访详情" }
+        },
+        {
+          "path": "customer-follow/add",
+          "style": { "navigationBarTitleText": "新增客情拜访" }
+        }
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/auth/login": {
+      "network": "all",
+      "packages": ["tabbars"]
+    },
+    "subpackages/tabbars/dashboard": {
+      "network": "all",
+      "packages": ["dashboard-sales"]
+    },
+    "subpackages/business/key-projects/index": {
+      "network": "all",
+      "packages": ["dashboard-sales"]
+    }
+  }
+}

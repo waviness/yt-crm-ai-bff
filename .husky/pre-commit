@@ -1,0 +1,5 @@
+# 设置内存限制
+export NODE_OPTIONS="--max-old-space-size=4096"
+
+# 只检查暂存的文件
+npx lint-staged --concurrent false

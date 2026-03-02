@@ -1,0 +1,9 @@
+{
+  "buildCommand": "pnpm run build:h5",
+  "outputDirectory": "dist/build/h5",
+  "functions": {
+    "api/chat.ts": {
+      "runtime": "@vercel/node@3"
+    }
+  }
+}

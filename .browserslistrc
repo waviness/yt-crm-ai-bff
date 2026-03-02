@@ -1,0 +1,18 @@
+# Browsers that we support
+
+# 主流浏览器最近两个版本
+last 2 versions
+
+# 国内浏览器
+> 1%
+
+not dead
+
+# iOS >= 10
+ios >= 10
+
+# Android >= 5
+android >= 5
+
+# 不支持 IE
+not ie < 11

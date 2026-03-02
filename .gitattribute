@@ -1,0 +1,7 @@
+# 强制所有文件使用LF作为行结束符
+* text=auto eol=lf
+
+# 如果你有某些类型的二进制文件，明确指定它们以避免Git尝试转换它们的行尾
+*.jpg binary
+*.png binary
+*.gif binary
